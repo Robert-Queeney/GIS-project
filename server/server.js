@@ -8,7 +8,7 @@ const fetch = require('node-fetch');
 const app = express();
 
 app.get('/', (req, res) => {
-    const apiUrl = 'https://gis.hennepin.us/arcgis/rest/services/HennepinData/PLACES/MapServer/8/query?outFields=*&where=1%3D1'
+    const apiUrl = 'https://services.arcgis.com/afSMGVsC7QlRK1kZ/arcgis/rest/services/PoliceOffense2016/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json'
 
     fetch(apiUrl)
     .then(response => response.json())
