@@ -1,26 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import React,  { Component, Fragment } from 'react';
+import axios from 'axios';
+import Map from './components/Map';
 
-function App() {
-  return (
-    <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      Hello Malachy
-    </div>
-  );
-}
+class App extends Component {
+  state = {
+    incidents: [],
+  }
+  
+  // async componentDidMount() {
+  //  const res = await axios.get('https://services.arcgis.com/afSMGVsC7QlRK1kZ/arcgis/rest/services/Police_Incidents_2021/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json', {
+ 
+  //  })
+  //  const incidents = res.data;
+  //  this.setState({incidents: incidents });
+  // };
+  
+  render() {
+   return (
+  <Map />
+   );
+  }
+  }
 
 export default App;
