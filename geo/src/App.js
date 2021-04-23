@@ -1,25 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
 import React,  { Component, Fragment } from 'react';
-import axios from 'axios';
-import Map from './components/Map';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
 class App extends Component {
-  state = {
-    incidents: [],
-  }
-  
-  // async componentDidMount() {
-  //  const res = await axios.get('https://services.arcgis.com/afSMGVsC7QlRK1kZ/arcgis/rest/services/Police_Incidents_2021/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json', {
- 
-  //  })
-  //  const incidents = res.data;
-  //  this.setState({incidents: incidents });
-  // };
   
   render() {
    return (
-  <Map />
+    <MapContainer center={[51.505, -0.09]} zoom={13} scrollWheelZoom={true}>
+    <TileLayer
+      attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    />
+    <Marker position={[51.505, -0.09]}>
+      <Popup>
+        A pretty CSS3 popup. <br /> Easily customizable.
+      </Popup>
+    </Marker>
+  </MapContainer>
+ 
    );
   }
   }

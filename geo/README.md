@@ -68,3 +68,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## Respurces: ##
+Check out some of these open data sources and see if it sparks any ideas:
+
+https://opendata.minneapolismn.gov/
+https://www.hennepin.us/gisopendata
+https://www.state.mn.us/opendata/
+https://information.stpaul.gov/
+https://data.cityofchicago.org/
+
+As far as data visualization, d3 has everything!
+https://d3js.org/
+
+mapping libraries, if we choose to represent any geographical based data
+https://leafletjs.com/
+https://docs.mapbox.com/mapbox.js/api/v3.3.1/
+https://deck.gl/
+https://developers.google.com/maps
