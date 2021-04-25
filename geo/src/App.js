@@ -6,7 +6,7 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 class App extends Component {
 
   state = {
-    crimes: ""
+    crimes: []
   }
 
   async componentDidMount() {
@@ -14,8 +14,7 @@ class App extends Component {
     const response = await fetch(url)
     const data = await response.json()
     this.setState({ crimes: data.features })
-    console.log(this.state.crimes[0])
-    // console.log(this.state.crimes.features[0].geometry.x)
+    console.log(this.state.crimes)
   }
 
   render() {
@@ -25,15 +24,15 @@ class App extends Component {
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        
         {/* Need to map over crimes and put points on the map */}
-          {/* {this.state.crimes.map(crime => { */}
-            <Marker position={[44.986656, -93.258133]}>
-            
-            {/* <Popup>
-                  A pretty CSS3 popup. <br /> Easily customizable.
-                </Popup> */}
+          {this.state.crimes.map(crime => {
+            <Marker 
+            key={crime.attributes.ESRI_OID}
+            position={[crime.geometry.y, crime.geometry.x]}>
+
           </Marker>
-           {/* })} */}
+           })}
           
 
         
